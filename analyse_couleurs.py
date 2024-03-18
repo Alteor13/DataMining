@@ -6,6 +6,7 @@ from sklearn.cluster import KMeans
 
 imgfile = Image.open("images/images/jynx.png")
 numarray = numpy.array(imgfile.getdata(), numpy.uint8)
+# numarray = numarray.reshape(-1,3)
 clusters = KMeans(n_clusters=4, n_init=2)
 clusters.fit(numarray)
 npbins = numpy.arange(0, 5)
