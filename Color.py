@@ -39,7 +39,7 @@ def is_near(color1, color2, tolerance, mode='RGB') -> bool:
     return distance_pourcentage <= tolerance
 
 
-def hex_to_rgb(color:str) -> list:
+def hex_to_rgb(color: str) -> list:
     """
     Convert a color from HEX to RGB.
     :param color: HEX color string, e.g. '#FF0000'
@@ -49,7 +49,7 @@ def hex_to_rgb(color:str) -> list:
     return [int(color[i:i+2], 16) for i in (0, 2, 4)]
 
 
-def hsv_to_rgb(color:list) -> list:
+def hsv_to_rgb(color: list) -> list:
     """
     Convert a color from HSV to RGB.
     :param color: list of three values (h, s, v) where:
@@ -80,5 +80,3 @@ def hsv_to_rgb(color:list) -> list:
         r, g, b = v, p, q
 
     return [int(r * 255), int(g * 255), int(b * 255)]
-
-
