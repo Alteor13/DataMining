@@ -10,24 +10,24 @@ import math
 def is_near(color1, color2, tolerance, mode='RGB') -> bool:
     """
     Check if two colors are near each other within a certain tolerance.
-    :param color1: first color; can be a tuple, a string or a list
-    :param color2: second color; can be a tuple, a string or a list
+    :param color1: first color; can be a string(HEX) or a list(RGB;HSV)
+    :param color2: second color; can be a string(HEX) or a list(RGB;HSV)
     :param tolerance: distance between the colors in percentage
     :param mode: can be 'RGB', 'HSV' or 'HEX'
     :return:
     """
 
     # Convert the colors to RGB lists
-    if mode == 'hex':
+    if mode == 'HEX':
         color1 = hex_to_rgb(color1)
         color2 = hex_to_rgb(color2)
-    elif mode == 'hsv':
+    elif mode == 'HSV':
         color1 = hsv_to_rgb(color1)
         color2 = hsv_to_rgb(color2)
-    elif mode == 'rgb':
+    elif mode == 'RGB':
         pass
     else:
-        raise ValueError('Invalid mode')
+        raise ValueError('Invalid mode' + mode)
 
     # Calculate the distance between the colors
     distance = math.sqrt((color1[0] - color2[0])**2 + (color1[1] - color2[1])**2 + (color1[2] - color2[2])**2)
